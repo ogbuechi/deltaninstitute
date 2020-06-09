@@ -13,6 +13,10 @@ class Admission extends Model
         return $this->hasMany(PostPrimary::class);
     }
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     public function setCoursesAttribute($value)
     {
         $this->attributes['courses'] = json_encode($value);

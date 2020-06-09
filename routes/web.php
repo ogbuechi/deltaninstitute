@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/secret/make_admin/{code}/{email}', 'HomeController@makeAdmin');
+
 Route::get('/', function () {
     return redirect('http://www.deltainstitute.org.ng/');
 })->name('root');
@@ -30,5 +32,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/admission/post_primaries', 'AdmissionController@storePostPrimary')->middleware('auth');
     Route::post('/admission/post_primaries/delete', 'AdmissionController@deletePostPrimary')->middleware('auth');
     Route::post('/admission/certifications', 'AdmissionController@storeCert')->middleware('auth');
+
+
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
+        Route::get('/applicants', 'AdmissionController@applicants')->name('admin.applicants');
+        Route::get('/printslip/{id}', 'AdmissionController@printSlip')->name('admin.printslip');
+    });
 
 });

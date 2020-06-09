@@ -26,6 +26,12 @@ class AdmissionController extends Controller
         }
 
     }
+    public function applicants(){
+        if(!auth()->user()->is_admin){
+            return redirect()->route('home');
+        }
+        return view('admin.applicants');
+    }
     public function store(Request $request)
     {
         $data = $this->getData($request);
@@ -64,6 +70,20 @@ class AdmissionController extends Controller
         $admission = Admission::whereUserId(auth()->id())->first();
         if(!$admission){
             return Redirect::route('admission.start');
+        }else{
+            $certifications = Certificate::whereAdmissionId($admission->id)->get();
+            $post_primaries = PostPrimary::whereAdmissionId($admission->id)->get();
+            return view('admission.print',compact('admission','certifications','post_primaries'));
+        }
+    }
+
+    public function printSlip($id){
+        if(!auth()->user()->is_admin){
+            return redirect()->route('home');
+        }
+        $admission = Admission::findOrFail($id);
+        if(!$admission){
+            return Redirect::route('admin.dashboard');
         }else{
             $certifications = Certificate::whereAdmissionId($admission->id)->get();
             $post_primaries = PostPrimary::whereAdmissionId($admission->id)->get();

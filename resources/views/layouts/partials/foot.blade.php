@@ -17,6 +17,8 @@
 <script src="{{ asset('js/dashboard.js')}}"></script>
 <script src="{{ mix('/js/app.js') }}" defer></script>
 
+@yield('js')
+
 <script>
     $(function(){
         'use strict'

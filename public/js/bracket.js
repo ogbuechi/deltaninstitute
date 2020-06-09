@@ -16,7 +16,6 @@
 
   // This will collapsed sidebar menu on left into a mini icon menu
   $('#btnLeftMenu').on('click', function(){
-      alert('hello');
     var menuText = $('.menu-item-label,.menu-item-arrow');
 
     if($('body').hasClass('collapsed-menu')) {
