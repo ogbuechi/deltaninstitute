@@ -130,11 +130,10 @@
                                 <label class="form-control-label">State of origin: <span class="tx-danger">*</span></label>
                                 <select required name="state_of_origin" class="form-control select2 {{ $errors->has('state_of_origin') ? 'parsley-error' : '' }}" data-placeholder="Select State of Origin">
                                     <option label="Choose country"></option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="USA">United States of America</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="China">China</option>
-                                    <option value="Japan">Japan</option>
+                                    <option value="Delta">Delta</option>
+                                    <option value="Anambra">Anambra</option>
+                                    <option value="Imo">Imo</option>
+                                    <option value="Abuja">Abuja</option>
                                 </select>
                                 <ul class="parsley-errors-list filled">
                                     {!! $errors->first('state_of_origin', '<li>:message.</li>') !!}
@@ -146,11 +145,7 @@
                                 <label class="form-control-label">Local Govt of origin: <span class="tx-danger">*</span></label>
                                 <select required name="lga" class="form-control select2 {{ $errors->has('lga') ? 'parsley-error' : '' }}" data-placeholder="Select LGA">
                                     <option label="Choose country"></option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="USA">United States of America</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="China">China</option>
-                                    <option value="Japan">Japan</option>
+                                    <option value="Oshmili South">Oshmili Sourth</option>
                                 </select>
                                 <ul class="parsley-errors-list filled">
                                     {!! $errors->first('lga', '<li>:message.</li>') !!}

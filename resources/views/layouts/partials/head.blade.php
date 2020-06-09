@@ -32,15 +32,15 @@
     <title>Delta Institute</title>
 
     <!-- vendor css -->
-    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/lib/Ionicons/css/ionicons.css" rel="stylesheet">
-    <link href="/lib/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet">
-    <link href="/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
-    <link href="/lib/rickshaw/rickshaw.min.css" rel="stylesheet">
-    <link href="/lib/chartist/chartist.css" rel="stylesheet">
+    <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/Ionicons/css/ionicons.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/jquery-switchbutton/jquery.switchButton.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/rickshaw/rickshaw.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/chartist/chartist.css') }}" rel="stylesheet">
 
     <!-- Bracket CSS -->
-    <link rel="stylesheet" href="/css/bracket.css">
+    <link rel="stylesheet" href="{{ asset('/css/bracket.css') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
