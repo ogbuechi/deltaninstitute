@@ -37794,7 +37794,7 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "row mt-2" }, [
-      _c("div", { staticClass: "col-md-10" }, [
+      _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "bd bd-gray-300 rounded table-responsive" }, [
           _c("table", { staticClass: "table table-hover mg-b-0" }, [
             _vm._m(1),
@@ -37845,7 +37845,7 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "row mg-b-25 mt-4" }, [
-          _c("div", { staticClass: "col-10" }, [
+          _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(2),
               _vm._v(" "),
@@ -37885,7 +37885,7 @@ var render = function() {
     _vm._m(3),
     _vm._v(" "),
     _c("div", { staticClass: "row mt-2" }, [
-      _c("div", { staticClass: "col-md-10" }, [
+      _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "bd bd-gray-300 rounded table-responsive" }, [
           _c("table", { staticClass: "table table-hover mg-b-0" }, [
             _vm._m(4),
@@ -37943,7 +37943,7 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "row mg-b-25 mt-4" }, [
-          _c("div", { staticClass: "col-10" }, [
+          _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(5),
               _vm._v(" "),
@@ -37979,7 +37979,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-5" }, [
+          _c("div", { staticClass: "col-6" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(6),
               _vm._v(" "),
@@ -38007,7 +38007,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-5" }, [
+          _c("div", { staticClass: "col-6" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(7),
               _vm._v(" "),
@@ -38035,7 +38035,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-10" }, [
+          _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(8),
               _vm._v(" "),
@@ -38071,7 +38071,7 @@ var render = function() {
     _vm._m(10),
     _vm._v(" "),
     _c("div", { staticClass: "row mt-2" }, [
-      _c("div", { staticClass: "col-md-10" }, [
+      _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "bd bd-gray-300 rounded table-responsive" }, [
           _c("table", { staticClass: "table mg-b-0" }, [
             _vm._m(11),
@@ -38129,7 +38129,7 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "row mg-b-25 mt-4" }, [
-          _c("div", { staticClass: "col-10" }, [
+          _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(12),
               _vm._v(" "),
@@ -38161,7 +38161,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-5" }, [
+          _c("div", { staticClass: "col-6" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(13),
               _vm._v(" "),
@@ -38193,7 +38193,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-5" }, [
+          _c("div", { staticClass: "col-6" }, [
             _c("div", { staticClass: "form-group" }, [
               _vm._m(14),
               _vm._v(" "),
@@ -38339,7 +38339,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-10" }, [
+    return _c("div", { staticClass: "col-12" }, [
       _c("button", { staticClass: "btn btn-info", attrs: { type: "submit" } }, [
         _vm._v("Save and add more")
       ])
@@ -38410,7 +38410,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-10" }, [
+    return _c("div", { staticClass: "col-12" }, [
       _c("button", { staticClass: "btn btn-info", attrs: { type: "submit" } }, [
         _vm._v("Save and add more")
       ])

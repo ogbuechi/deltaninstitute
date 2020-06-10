@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Admission;
 use App\Certificate;
 use App\PostPrimary;
+use PDF;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Redirect;
@@ -30,7 +31,8 @@ class AdmissionController extends Controller
         if(!auth()->user()->is_admin){
             return redirect()->route('home');
         }
-        return view('admin.applicants');
+        $admissions = Admission::all();
+        return view('admin.applicants',compact('admissions'));
     }
     public function store(Request $request)
     {
@@ -89,6 +91,16 @@ class AdmissionController extends Controller
             $post_primaries = PostPrimary::whereAdmissionId($admission->id)->get();
             return view('admission.print',compact('admission','certifications','post_primaries'));
         }
+    }
+
+    public function downloadPDF($id) {
+        $admission = Admission::findOrFail($id);
+        $certifications = Certificate::whereAdmissionId($admission->id)->get();
+        $post_primaries = PostPrimary::whereAdmissionId($admission->id)->get();
+
+        $pdf = PDF::loadView('admission.pdf_print',compact('admission','certifications','post_primaries'));
+
+        return $pdf->download('printout.pdf');
     }
 
     /**

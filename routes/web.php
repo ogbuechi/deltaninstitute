@@ -34,6 +34,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/admission/certifications', 'AdmissionController@storeCert')->middleware('auth');
 
 
+    Route::get('/download_pdf/{id}', 'AdmissionController@downloadPDF')->name('download_pdf');
+
+
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
         Route::get('/applicants', 'AdmissionController@applicants')->name('admin.applicants');

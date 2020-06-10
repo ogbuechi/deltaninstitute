@@ -1,21 +1,62 @@
-@extends('layouts.front')
 
-@section('content')
-    <div class="br-mainpanel">
-        <div class="br-pageheader pd-y-15 pd-l-20">
-            <nav class="breadcrumb pd-0 mg-0 tx-12">
-                <a class="breadcrumb-item" href="{{ route('home') }}">Dashboard</a>
-                <span class="breadcrumb-item active">Print Application Slip</span>
-            </nav>
-        </div><!-- br-pageheader -->
-        <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-            <h4 class="tx-gray-800 mg-b-5">Print your application slip
-            <a href="{{ route('download_pdf',$admission->id) }}" class="btn btn-success float-right">Print Slip</a>
-            </h4>
-{{--            <p class="mg-b-0">Applicants who submit more than one application form or use one receipt for more than one set forms will be disqualified </p>--}}
-        </div>
-
-
+<style>
+    @media print{
+        *,*::before,*::after{text-shadow:none!important;box-shadow:none!important;}
+        thead{display:table-header-group;}
+        tr,img{page-break-inside:avoid;}
+        h2{orphans:3;widows:3;}
+        h2{page-break-after:avoid;}
+        .table{border-collapse:collapse!important;}
+        .table td,.table th{background-color:#fff!important;}
+        .table-bordered th,.table-bordered td{border:1px solid #ddd!important;}
+    }
+    *,*::before,*::after{box-sizing:inherit;}
+    h2,h4{margin-top:0;margin-bottom:.5rem;}
+    img{vertical-align:middle;border-style:none;}
+    table{border-collapse:collapse;}
+    th{text-align:left;}
+    h2,h4{margin-bottom:0.5rem;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;}
+    h2{font-size:2rem;}
+    h4{font-size:1.5rem;}
+    .row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;}
+    .col-3,.col-9{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px;}
+    .col-3{flex:0 0 25%;max-width:25%;}
+    .col-9{flex:0 0 75%;max-width:75%;}
+    .table{width:100%;max-width:100%;margin-bottom:1rem;background-color:transparent;}
+    .table th,.table td{padding:0.75rem;vertical-align:top;border-top:1px solid #dee2e6;}
+    .table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6;}
+    .table-bordered{border:1px solid #dee2e6;}
+    .table-bordered th,.table-bordered td{border:1px solid #dee2e6;}
+    .table-bordered thead th{border-bottom-width:2px;}
+    @media (max-width: 991px){
+        .table-responsive{display:block;width:100%;overflow-x:auto;-ms-overflow-style:-ms-autohiding-scrollbar;}
+        .table-responsive.table-bordered{border:0;}
+    }
+    .border{border:1px solid #e9ecef!important;}
+    .rounded{border-radius:3px!important;}
+    .justify-content-center{justify-content:center!important;}
+    .mt-2{margin-top:0.5rem!important;}
+    .mt-4{margin-top:1.5rem!important;}
+    .mb-4{margin-bottom:1.5rem!important;}
+    .text-center{text-align:center!important;}
+    .text-uppercase{text-transform:uppercase!important;}
+    .table{border-collapse:separate;border-spacing:0;}
+    .table thead > tr > th{border-top:0;border-bottom:0;font-weight:700;font-size:12px;text-transform:uppercase;color:#343a40;letter-spacing:0.5px;}
+    .table tbody > tr > th{color:#343a40;font-weight:500;}
+    .table-bordered{border:0;}
+    .br-section-wrapper{background-color:#fff;padding:30px 20px;box-shadow:0px 1px 3px 0px rgba(0, 0, 0, 0.21);}
+    @media (min-width: 576px){
+        .br-section-wrapper{padding:30px;border-radius:3px;}
+    }
+    @media (min-width: 992px){
+        .br-section-wrapper{padding:60px;}
+    }
+    .bd{border:1px solid rgba(0, 0, 0, 0.15);}
+    .bd-gray-300{border-color:#dee2e6;}
+    .mg-b-0{margin-bottom:0px;}
+    .tx-bold{font-weight:700;}
+    .tx-uppercase{text-transform:uppercase;}
+</style>
         <div class="br-pagebody">
             <div class="br-section-wrapper ">
 
@@ -165,5 +206,3 @@
 
             </div>
         </div>
-    </div>
-@endsection

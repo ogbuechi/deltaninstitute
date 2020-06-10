@@ -21,7 +21,7 @@
 
 
 
-                <courses :p_primaries="{{ $post_primaries }}" :id="{{ $admission->id }}" :all_certifications="{{ $certifications }}" :all_courses="{{ $admission->courses }}"></courses>
+                <courses :p_primaries="{{ json_encode($post_primaries) }}" :id="{{ $admission->id }}" :all_certifications="{{ json_encode($certifications) }}" :all_courses="{{ json_encode($admission->courses) }}"></courses>
 
                 @section('hide')
                     <form method="POST">

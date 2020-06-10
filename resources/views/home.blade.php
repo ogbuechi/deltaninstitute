@@ -53,12 +53,13 @@
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-teal rounded overflow-hidden">
                         <div class="pd-25 d-flex align-items-center">
-                            <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
+{{--                            <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>--}}
+                            <img style="height: 50px; width: 50px" src="{{ asset('images/logo.jpeg') }}" />
                             <div class="mg-l-20">
                                 <a href="{{ route('admission.start') }}">
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">Agbor Application</p>
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">DSIA</p>
                                 </a>
-                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Agbor College of Education Application</p>
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">DELTA STATE INSTITUE FOR ADVANCED STUDIES, AGBOR & NNEWI CENTRES</p>
 
                             </div>
                         </div>
@@ -69,10 +70,10 @@
                         <div class="pd-25 d-flex align-items-center">
                             <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
                             <div class="mg-l-20">
-                                <a href="{{ route('admission.start') }}">
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">Anewi Application</p>
+                                <a href="#">
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">Application Form</p>
                                 </a>
-                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Nnewi College of Education Application</p>
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">COLLEGE OF EDUCATION AGBOR</p>
 
                             </div>
                         </div>

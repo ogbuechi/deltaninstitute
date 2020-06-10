@@ -6,7 +6,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="bd bd-gray-300 rounded table-responsive">
                         <table class="table table-hover mg-b-0">
                             <thead>
@@ -35,7 +35,7 @@
 
         <div class="row mg-b-25 mt-4">
 
-                <div class="col-10">
+                <div class="col-12">
                     <div class="form-group">
                         <label class="form-control-label">Course/Subject Name : <span class="tx-danger">*</span></label>
                         <input v-model="course" class="form-control" type="text" placeholder="Enter name">
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="bd bd-gray-300 rounded table-responsive">
                         <table class="table table-hover mg-b-0">
                             <thead>
@@ -86,33 +86,33 @@
             </div>
         <form method="POST" @submit.prevent="addPostPrimaries">
         <div class="row mg-b-25 mt-4">
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="form-group">
                             <label class="form-control-label">Name of Institution : <span class="tx-danger">*</span></label>
                             <input v-model="form.name_of_institution" required class="form-control" type="text" placeholder="Enter name of institution">
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <div class="form-group">
                             <label class="form-control-label">From : <span class="tx-danger">*</span></label>
                             <input v-model="form.from" class="form-control" type="text" placeholder="Enter from date">
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <div class="form-group">
                             <label class="form-control-label">To : <span class="tx-danger">*</span></label>
                             <input v-model="form.to" class="form-control" type="text" placeholder="Enter to date">
                         </div>
                     </div>
 
-                <div class="col-10">
+                <div class="col-12">
                     <div class="form-group">
                         <label class="form-control-label">Qualifications Obtained : <span class="tx-danger">*</span></label>
                         <input v-model="form.qualifications" class="form-control" type="text" placeholder="Enter qualification">
                     </div>
                 </div>
 
-                <div class="col-10">
+                <div class="col-12">
                     <button class="btn btn-info" type="submit">Save and add more</button>
                 </div>
 
@@ -130,7 +130,7 @@
         </div>
 
         <div class="row mt-2">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="bd bd-gray-300 rounded table-responsive">
                     <table class="table mg-b-0">
                         <thead>
@@ -164,19 +164,19 @@
 
         <form method="POST" @submit.prevent="addCertifications">
         <div class="row mg-b-25 mt-4">
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="form-group">
                             <label class="form-control-label">Name of Exam : <span class="tx-danger">*</span></label>
                             <input v-model="form_b.name_of_exam" required class="form-control" type="text" placeholder="Enter name of institution">
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <div class="form-group">
                             <label class="form-control-label">Date of Exam : <span class="tx-danger">*</span></label>
                             <input required v-model="form_b.date_of_exam" class="form-control" type="text" placeholder="Enter from date">
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <div class="form-group">
                             <label class="form-control-label">Exam Number : <span class="tx-danger">*</span></label>
                             <input required v-model="form_b.exam_number" class="form-control" type="text" placeholder="Enter to date">
@@ -184,7 +184,7 @@
                     </div>
 
 
-                <div class="col-10">
+                <div class="col-12">
                     <button class="btn btn-info" type="submit">Save and add more</button>
                 </div>
 

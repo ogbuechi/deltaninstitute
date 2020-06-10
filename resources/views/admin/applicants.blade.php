@@ -8,18 +8,68 @@
     <div class="br-mainpanel">
         <div class="br-pageheader pd-y-15 pd-l-20">
             <nav class="breadcrumb pd-0 mg-0 tx-12">
-                <a class="breadcrumb-item" href="{{ route('admin.dashboard') }}">Bracket</a>
+                <a class="breadcrumb-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
                 <span class="breadcrumb-item active">Applicants</span>
             </nav>
         </div><!-- br-pageheader -->
-        <div class="pd-x-20 text-center pd-sm-x-30 pd-t-20 pd-sm-t-30">
-            <h4 class="tx-gray-800 mg-b-5">Comming Leta</h4>
+        <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+            <h4 class="tx-gray-800 mg-b-5">All Applicants</h4>
+
+            <div class="br-pagebody">
+                <div class="br-section-wrapper">
+                    <div class="">
+                        <div class="bd bd-gray-300 rounded table-responsive">
+                            @if (count($admissions) > 0)
+                                <table class="table mg-b-0">
+                                    <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>First Name</th>
+                                        <th>SurName</th>
+                                        <th>Telephone</th>
+                                        <th>Sex</th>
+                                        <th>Date</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($admissions as $item)
+                                        <tr>
+                                            <td class="">
+                                                <img src="{{ $item->user->avatar }}" class="wd-40 rounded-circle" alt="">
+                                            </td>
+                                            <td>
+                                               {{ $item->first_name }}
+                                            </td>
+                                            <td>
+                                               {{ $item->surname }}
+                                            </td>
+                                            <td>
+                                               {{ $item->r_telephone }}
+                                            </td>
+                                            <td>
+                                               {{ $item->sex }}
+                                            </td>
+                                            <td>{{ $item->created_at->format('Y-M-d') }}</td>
+                                            <td class="pd-r-0-force tx-center"><a href="{{ route('admin.printslip',$item->id) }}" class="btn btn-outline-info btn-oblong">Print Slip</a></td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            @else
+                                <h3 class="text-center mt-4 mb-4">No Applicants Yet</h3>
+                            @endif
+                        </div>
+                    </div>
+{{--                    <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Basic Responsive DataTable</h6>--}}
+                </div>
+            </div>
         </div>
     </div>
 
 @endsection
 
-@section('content')
+@section('contents')
     <div class="br-mainpanel">
         <div class="br-pageheader pd-y-15 pd-l-20">
             <nav class="breadcrumb pd-0 mg-0 tx-12">
