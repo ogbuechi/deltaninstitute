@@ -8,10 +8,20 @@
                 <span class="breadcrumb-item active">Admission Application</span>
             </nav>
         </div><!-- br-pageheader -->
-        <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-            <h4 class="tx-gray-800 mg-b-5">Important Notice</h4>
-            <p class="mg-b-0">Applicants who submit more than one application form or use one receipt for more than one set forms will be disqualified </p>
-        </div>
+        @if ($type == 'ijmb')
+            <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+                <h4 class="tx-gray-800 mg-b-5 text-center mb-2">INTERIM JOINT MATRICULATION BOARD PROGRAMME APPLICATION</h4>
+                <h3 class=" text-center tx-gray-800 mg-b-5">Important Notice</h3>
+                <p class="mg-b-0 text-center">Applicants who submit more than one application form or use one receipt for more than one set forms will be disqualified </p>
+            </div>
+        @else
+            <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+                <h4 class="tx-gray-800 mg-b-5 text-center text-uppercase mb-2">JOINT University Preliminary Examination Board APPLICATION</h4>
+                <h3 class=" text-center tx-gray-800 mg-b-5">Important Notice</h3>
+                <p class="mg-b-0 text-center">Applicants who submit more than one application form or use one receipt for more than one set forms will be disqualified </p>
+            </div>
+        @endif
+
 
         <div class="br-pagebody">
             <div class="br-section-wrapper">
@@ -27,6 +37,8 @@
                     <form action="{{ route('admission.stores') }}" method="POST">
 
                         {{ csrf_field() }}
+
+                        <input type="hidden" value="{{ $type }}" name="type">
 
                     <div class="row mg-b-25">
                         <div class="col-lg-4">
@@ -220,7 +232,7 @@
                     </div><!-- row -->
 
                     <div class="form-layout-footer">
-                        <input class="btn btn-info" type="submit" value="Submit Form">
+                        <input class="btn btn-info" type="submit" value="Submit & Continue >>">
                     </div><!-- form-layout-footer -->
                     </form>
                 </div><!-- form-layout -->

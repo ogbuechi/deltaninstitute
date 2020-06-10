@@ -1,5 +1,6 @@
 <template>
-    <div class="form-layout form-layout-1">
+    <div>
+        <div v-if="!image" class="form-layout form-layout-1">
             <div class="row">
                 <div class="col-lg-12">
                     <h4 class="tx-gray-800 mg-b-5">A level subjects/courses</h4>
@@ -23,7 +24,7 @@
                                 <td>{{ item}} </td>
                                 <td>
                                     <button @click="removeCourse(index)" title="Remove This Course/Subject" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-<!--                                    <i @click="delete" class="fa fa-trash" /> -->
+                                    <!--                                    <i @click="delete" class="fa fa-trash" /> -->
                                 </td>
                             </tr>
                             </tbody>
@@ -31,22 +32,22 @@
                     </div>
                 </div>
             </div>
-        <form @submit.prevent="addCourse">
+            <form @submit.prevent="addCourse">
 
-        <div class="row mg-b-25 mt-4">
+                <div class="row mg-b-25 mt-4">
 
-                <div class="col-12">
-                    <div class="form-group">
-                        <label class="form-control-label">Course/Subject Name : <span class="tx-danger">*</span></label>
-                        <input v-model="course" class="form-control" type="text" placeholder="Enter name">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-control-label">Course/Subject Name : <span class="tx-danger">*</span></label>
+                            <input v-model="course" class="form-control" type="text" placeholder="Enter name">
+                        </div>
+                        <button class="btn btn-info" type="submit">Save and add more</button>
+
                     </div>
-                    <button class="btn btn-info" type="submit">Save and add more</button>
 
-                </div>
-
-            <!-- col-4 -->
-            </div><!-- row -->
-        </form>
+                    <!-- col-4 -->
+                </div><!-- row -->
+            </form>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -84,8 +85,8 @@
                     </div>
                 </div>
             </div>
-        <form method="POST" @submit.prevent="addPostPrimaries">
-        <div class="row mg-b-25 mt-4">
+            <form method="POST" @submit.prevent="addPostPrimaries">
+                <div class="row mg-b-25 mt-4">
                     <div class="col-12">
                         <div class="form-group">
                             <label class="form-control-label">Name of Institution : <span class="tx-danger">*</span></label>
@@ -105,65 +106,65 @@
                         </div>
                     </div>
 
-                <div class="col-12">
-                    <div class="form-group">
-                        <label class="form-control-label">Qualifications Obtained : <span class="tx-danger">*</span></label>
-                        <input v-model="form.qualifications" class="form-control" type="text" placeholder="Enter qualification">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="form-control-label">Qualifications Obtained : <span class="tx-danger">*</span></label>
+                            <input v-model="form.qualifications" class="form-control" type="text" placeholder="Enter qualification">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-info" type="submit">Save and add more</button>
+                    </div>
+
+
+
+
+
+                </div><!-- row -->
+            </form>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="tx-gray-800 mg-b-5">School Certificates Results : WAEC/NECO SSCE / NABTEB / Others: </h4>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="bd bd-gray-300 rounded table-responsive">
+                        <table class="table mg-b-0">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name of Examination</th>
+                                <th>Date of Examination</th>
+                                <th>Exam No.</th>
+                                <th>Subject Grades</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr v-for="(item,index) in certifications">
+                                <th scope="row">{{ index+1 }}</th>
+                                <td>{{ item.name_of_exam }} </td>
+                                <td>{{ item.date_of_exam }} </td>
+                                <td>{{ item.exam_number }} </td>
+                                <td></td>
+                                <td>
+                                    <button @click="removeCourse(index)" title="Remove This Course/Subject" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                    <!--                                    <i @click="delete" class="fa fa-trash" /> -->
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-
-                <div class="col-12">
-                    <button class="btn btn-info" type="submit">Save and add more</button>
-                </div>
-
-
-
-
-
-            </div><!-- row -->
-        </form>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <h4 class="tx-gray-800 mg-b-5">School Certificates Results : WAEC/NECO SSCE / NABTEB / Others: </h4>
             </div>
-        </div>
 
-        <div class="row mt-2">
-            <div class="col-md-12">
-                <div class="bd bd-gray-300 rounded table-responsive">
-                    <table class="table mg-b-0">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name of Examination</th>
-                            <th>Date of Examination</th>
-                            <th>Exam No.</th>
-                            <th>Subject Grades</th>
-                            <th>Delete</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <tr v-for="(item,index) in certifications">
-                            <th scope="row">{{ index+1 }}</th>
-                            <td>{{ item.name_of_exam }} </td>
-                            <td>{{ item.date_of_exam }} </td>
-                            <td>{{ item.exam_number }} </td>
-                            <td></td>
-                            <td>
-                                <button @click="removeCourse(index)" title="Remove This Course/Subject" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                <!--                                    <i @click="delete" class="fa fa-trash" /> -->
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <form method="POST" @submit.prevent="addCertifications">
-        <div class="row mg-b-25 mt-4">
+            <form method="POST" @submit.prevent="addCertifications">
+                <div class="row mg-b-25 mt-4">
                     <div class="col-12">
                         <div class="form-group">
                             <label class="form-control-label">Name of Exam : <span class="tx-danger">*</span></label>
@@ -184,18 +185,38 @@
                     </div>
 
 
-                <div class="col-12">
-                    <button class="btn btn-info" type="submit">Save and add more</button>
-                </div>
+                    <div class="col-6">
+                        <button class="btn btn-info" type="submit">Save and add more</button>
+                    </div>
+
+                    <div class="col-6">
+                        <button @click="image = true" class="btn btn-info float-right" type="submit">Next >></button>
+                    </div>
 
 
 
 
 
-            </div><!-- row -->
-        </form>
+                </div><!-- row -->
+            </form>
+        </div>
+        <div v-if="image" class="row mg-b-25 mt-4">
+            <div class="col-12 mb-4">
+                <h3 class="mb-3">Passport Photograph :</h3>
 
+                <dropzone @vdropzone-sending="sending" @vdropzone-processing="processing" @vdropzone-success="vsuccess" ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></dropzone>
+            </div>
+
+            <div class="col-6">
+                <a href="/admission/print" class="btn btn-info">Print Out Slip</a>
+            </div>
+
+            <div class="col-6">
+                <button @click="image = false" class="btn btn-warning float-right" type="submit"> Back <<</button>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -203,6 +224,20 @@
         props:['all_courses','all_certifications','id','p_primaries'],
         data(){
             return {
+                image:false,
+                token : $('meta[name="csrf-token"]').attr('content'),
+                dropzoneOptions: {
+                    url: '/image/upload',
+                    thumbnailWidth: 150,
+                    maxFiles: 1,
+                    dictDefaultMessage:'+ Upload your passport photograph',
+                    maxFilesize: 2.0,
+                    acceptedFiles: ".png,.jpeg,.jpg",
+                    addRemoveLinks: true,
+                    success: function (file, response) {
+                        return response.image
+                    },
+                },
                 not_working : false,
                 add_more:false,
                 // courses : [],
@@ -287,6 +322,24 @@
                 alertify.success('You successfully removed one post primaries');
                 axios.post("/admission/post_primaries/delete", {id:id}).then(resp => {
                 });
+            },
+
+            vsuccess (file, response) {
+                this.form.photo = response.image;
+                this.not_working = true;
+                this.course = '';
+                // this.showAddEd = false;
+                axios.post("/admission/update", {photo:response.image}).then(resp => {
+                    alertify.success('Passport successfully uploaded');
+                    this.not_working = false;
+                });
+                this.not_working = false;
+            },
+            processing(file){
+                this.not_working = true;
+            },
+            sending: function (file, xhr, formData) {
+                formData.append('_token', this.token);
             },
         }
     }

@@ -22,9 +22,11 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::post('/image/upload', 'HomeController@postImage');
+
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/admission/start', 'AdmissionController@start')->name('admission.start');
+    Route::get('/admission/start/{type}', 'AdmissionController@start')->name('admission.start');
     Route::get('/admission/continue', 'AdmissionController@continue')->name('admission.continue');
     Route::get('/admission/print', 'AdmissionController@print')->name('admission.finish');
     Route::post('admission', 'AdmissionController@store')->name('admission.stores');

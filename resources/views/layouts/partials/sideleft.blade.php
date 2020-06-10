@@ -194,7 +194,7 @@
                     <span class="menu-item-label">Home</span>
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
-            <a href="#" class="br-menu-link">
+            <a href="{{ route('admission.finish') }}" class="br-menu-link">
                 <div class="br-menu-item">
                     <i class="menu-item-icon icon ion-person tx-24"></i>
                     <span class="menu-item-label">Profile</span>
@@ -217,7 +217,7 @@
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('admission.start') }}" class="nav-link">Start Application</a></li>
+                <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">Start Application</a></li>
                 <li class="nav-item"><a href="{{ route('admission.finish') }}" class="nav-link">Print Application</a></li>
             </ul>
 

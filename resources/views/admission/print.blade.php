@@ -20,11 +20,19 @@
             <div class="br-section-wrapper ">
 
                 <div class="row">
+                    @if ($admission->type == 'ijmb')
                     <div class="text-center">
-                        <h2>DELTA STATE INSTITUE FOR ADVANCED STUDIES, AGBOR & NNEWI CENTRES</h2>
-                        <h4 class="text-uppercase mt-2">Joint University Preliminary Examination Board (JUPEB)</h4>
+                        <h2>INTERIM JOINT MATRICULATION BOARD PROGRAMME</h2>
+{{--                        <h4 class="text-uppercase mt-2">Joint University Preliminary Examination Board (JUPEB)</h4>--}}
                         <h4 class="mt-4 mb-4">Application Printout</h4>
                     </div>
+                    @else
+                        <div class="text-center">
+                            <h2 class="text-uppercase">JOINT University Preliminary Examination Board </h2>
+{{--                            <h4 class="text-uppercase mt-2">Joint University Preliminary Examination Board (JUPEB)</h4>--}}
+                            <h4 class="mt-4 mb-4">Application Printout</h4>
+                        </div>
+                        @endif
                     <div class="col-9">
                         <div class="bd bd-gray-300 rounded table-bordered table-responsive">
                             <table class="table mg-b-0">
@@ -151,7 +159,7 @@
                     <div class="col-3">
                         <div class="border">
                             <div class="justify-content-center text-center">
-                                <img class="text-center" style="width: 170px; height: 170px; align-content: center; margin-top: 20px; margin-bottom: 20px" src="{{ auth()->user()->avatar }}">
+                                <img class="text-center" style="width: 170px; height: 170px; align-content: center; margin-top: 20px; margin-bottom: 20px" src="{{ $admission->photo }}">
                             </div>
                         </div>
 {{--                        <div class="border" style="margin-top: 30px">--}}

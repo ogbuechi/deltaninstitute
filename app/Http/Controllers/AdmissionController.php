@@ -17,11 +17,14 @@ class AdmissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function start()
+    public function start($type)
     {
+        if(!in_array($type,['jupeb','ijmb'])){
+            return redirect()->route('home');
+        }
         $admission = Admission::whereUserId(auth()->id())->first();
         if(!$admission){
-            return view('admission.start');
+            return view('admission.start',compact('type'));
         }else{
             return Redirect::route('admission.continue');
         }
@@ -71,10 +74,11 @@ class AdmissionController extends Controller
     public function print(){
         $admission = Admission::whereUserId(auth()->id())->first();
         if(!$admission){
-            return Redirect::route('admission.start');
+            return Redirect::route('home');
         }else{
             $certifications = Certificate::whereAdmissionId($admission->id)->get();
             $post_primaries = PostPrimary::whereAdmissionId($admission->id)->get();
+//            return view('admission.pdf_print',compact('admission','certifications','post_primaries'));
             return view('admission.print',compact('admission','certifications','post_primaries'));
         }
     }
@@ -133,6 +137,7 @@ class AdmissionController extends Controller
         $rules = [
             'work_experiences' => 'nullable|array',
             'courses' => 'nullable',
+            'photo' => 'nullable',
 //            'user_id' => 'required|integer',
         ];
         $data = $request->validate($rules);
@@ -179,6 +184,7 @@ class AdmissionController extends Controller
             'user_id' => ['nullable'],
             'surname' => ['required', 'max:100'],
             'first_name' => ['required'],
+            'type' => ['required'],
             'other_names' => ['nullable'],
             'maiden_name' => ['required'],
             'permanent_home_address' => ['required'],

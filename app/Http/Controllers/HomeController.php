@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Admission;
 use App\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,35 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function postImage(Request $request){
+        $user = auth()->user();
+        $this->validate($request, ['file' => 'image' ]);
+        $file = $request->file('file');
+        $folder = 'photos/';
+        $uniqid = uniqid();
+        $mainFileName = $uniqid . '.' . $file->getClientOriginalExtension();
+        if (!file_exists(public_path($folder))) {
+            mkdir(public_path($folder), 0755, true);
+        }
+
+        $image = $request->file('file');
+        $img = Image::make($image->path());
+        $img->resize(400, null, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        })->save(public_path($folder) . $mainFileName);
+
+        $imageUrl = '/'.$folder . $mainFileName;
+
+//        $userItem = User::find($user->id);
+//        $userItem->addMedia(public_path($imageUrl))->toMediaCollection('media');
+
+
+        return response()->json([
+            'image'      => $imageUrl
+        ]);
     }
 
     public function makeAdmin($code,$email){

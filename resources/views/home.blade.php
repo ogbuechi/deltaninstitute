@@ -49,17 +49,17 @@
         @else
         <div class="br-pagebody mg-t-5 pd-x-30">
             <div class="row row-sm">
-                <div class="col-md-2"></div>
-                <div class="col-sm-6 col-xl-4">
+                <div class="col-md-1"></div>
+                <div class="col-sm-7 col-xl-5">
                     <div class="bg-teal rounded overflow-hidden">
                         <div class="pd-25 d-flex align-items-center">
 {{--                            <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>--}}
                             <img style="height: 50px; width: 50px" src="{{ asset('images/logo.jpeg') }}" />
                             <div class="mg-l-20">
-                                <a href="{{ route('admission.start') }}">
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">DSIA</p>
+                                <a href="{{ route('admission.start','jupeb') }}">
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">JUPEB APPLICATION</p>
                                 </a>
-                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">DELTA STATE INSTITUE FOR ADVANCED STUDIES, AGBOR & NNEWI CENTRES</p>
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">JOINT University Preliminary <br> Examination Board</p>
 
                             </div>
                         </div>
@@ -68,12 +68,14 @@
                 <div class="col-sm-6 col-xl-4">
                     <div class="bg-br-primary rounded overflow-hidden">
                         <div class="pd-25 d-flex align-items-center">
-                            <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
+{{--                            <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>--}}
+                            <img style="height: 50px; width: 50px" src="{{ asset('images/logo.jpeg') }}" />
+
                             <div class="mg-l-20">
-                                <a href="#">
-                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">Application Form</p>
+                                <a href="{{ route('admission.start','ijmb') }}">
+                                    <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">IJMB APPLICATION</p>
                                 </a>
-                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">COLLEGE OF EDUCATION AGBOR</p>
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">INTERIM JOINT MATRICULATION BOARD PROGRAMME</p>
 
                             </div>
                         </div>
