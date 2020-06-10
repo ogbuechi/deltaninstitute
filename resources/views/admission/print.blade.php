@@ -81,7 +81,7 @@
                                 </tr>
                                 <tr>
                                     <td class="tx-bold" width="30%">State of origin</td>
-                                    <td>{{ $admission->state }}</td>
+                                    <td>{{ $admission->state_of_origin  }}</td>
                                     <td class="tx-bold">Nationality</td>
                                     <td>{{ $admission->nationality }}</td>
                                 </tr>

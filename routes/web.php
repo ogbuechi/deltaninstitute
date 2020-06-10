@@ -22,6 +22,11 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
+
+    Route::get('/countries/{id}/states', 'LocationsController@states')->name('ajax.states');
+    Route::get('/states/{id}/cities', 'LocationsController@cities')->name('ajax.cities');
+    Route::get('/state_name/{name}/lgas', 'LocationsController@lgasByStateName')->name('ajax.lgas');
+
     Route::post('/image/upload', 'HomeController@postImage');
 
     Route::get('/home', 'HomeController@index')->name('home');

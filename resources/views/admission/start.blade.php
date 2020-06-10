@@ -124,13 +124,10 @@
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Nationality: <span class="tx-danger">*</span></label>
-                                <select required name="nationality" class="form-control select2 {{ $errors->has('nationality') ? 'parsley-error' : '' }}" data-placeholder="Select Nationality">
-                                    <option label="Choose country"></option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="USA">United States of America</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="China">China</option>
-                                    <option value="Japan">Japan</option>
+                                <select required name="nationality" onchange="fetchState(this.options[this.selectedIndex].getAttribute('data-id'))" class="form-control select2-show-search {{ $errors->has('nationality') ? 'parsley-error' : '' }}" data-placeholder="Select Nationality">
+                                    @foreach (\App\Country::all() as $key => $country)
+                                        <option data-id="{{ $country->id }}" value="{{ $country->name }}">{{ $country->name }}</option>
+                                    @endforeach
                                 </select>
                                 <ul class="parsley-errors-list filled">
                                     {!! $errors->first('nationality', '<li>:message.</li>') !!}
@@ -140,12 +137,8 @@
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">State of origin: <span class="tx-danger">*</span></label>
-                                <select required name="state_of_origin" class="form-control select2 {{ $errors->has('state_of_origin') ? 'parsley-error' : '' }}" data-placeholder="Select State of Origin">
-                                    <option label="Choose country"></option>
-                                    <option value="Delta">Delta</option>
-                                    <option value="Anambra">Anambra</option>
-                                    <option value="Imo">Imo</option>
-                                    <option value="Abuja">Abuja</option>
+                                <select required name="state_of_origin" onchange="fetchLgas(this.value)" disabled class="form-control select2-show-search {{ $errors->has('state_of_origin') ? 'parsley-error' : '' }}" data-placeholder="Select State of Origin">
+                                    <option value=''>Select Country First</option>
                                 </select>
                                 <ul class="parsley-errors-list filled">
                                     {!! $errors->first('state_of_origin', '<li>:message.</li>') !!}
@@ -155,9 +148,8 @@
                         <div class="col-lg-4">
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Local Govt of origin: <span class="tx-danger">*</span></label>
-                                <select required name="lga" class="form-control select2 {{ $errors->has('lga') ? 'parsley-error' : '' }}" data-placeholder="Select LGA">
-                                    <option label="Choose country"></option>
-                                    <option value="Oshmili South">Oshmili Sourth</option>
+                                <select required name="lga" class="form-control select2-show-search {{ $errors->has('lga') ? 'parsley-error' : '' }}" data-placeholder="Select LGA">
+                                    <option value=''>Select State First</option>
                                 </select>
                                 <ul class="parsley-errors-list filled">
                                     {!! $errors->first('lga', '<li>:message.</li>') !!}
@@ -240,4 +232,52 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script src="{{ asset('/lib/select2.min.js') }}"></script>
+
+    <script>
+        function fetchState(country_id){
+            // alert(country_id);
+            $('[name="state_of_origin"]').html('<option value="">Fetching ..</option>'); // keep the lga field disabled
+            $('[name="lga"]').prop('disabled', true); // keep the lga field disabled
+            $.ajax({
+                url: "{{ url('/') }}" + '/countries/' + country_id + '/states',
+                method: 'get',
+                success: function (data) {
+                    let output = "<option value=''>Select State</option>";
+                    data.states.forEach(el => {
+                        output += `<option data-id="${el.id}" value="${el.name}">${el.name}</option>`;
+                    });
+
+                    $('[name="state_of_origin"]').prop('disabled', false).html(output);
+
+                },
+                error: function (err) {
+                    alert("Error: " + err.statusText);
+                }
+            });
+        }
+
+        function fetchLgas(state_name){
+            $('[name="lga"]').html('<option value="">Fetching ..</option>') // keep the lga field disabled
+
+            $.ajax({
+                url: "{{ url('/') }}" + '/state_name/' + state_name + '/lgas',
+                method: 'get',
+                success: function (data) {
+                    let output = "<option value=''>Select LGA</option>";
+                    data.lgas.forEach(el => {
+                        output += `<option value="${el.name}">${el.name}</option>`;
+                    });
+
+                    $('[name="lga"]').prop('disabled', false).html(output);
+                },
+                error: function (err) {
+                    alert("Error: " + err.statusText);
+                }
+            });
+        }
+    </script>
 @endsection

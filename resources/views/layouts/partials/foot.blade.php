@@ -12,6 +12,7 @@
 <script src="{{ asset('/lib/rickshaw/rickshaw.min.js') }}"></script>
 
 
+
 <script src="{{ asset('js/bracket.js')}}"></script>
 <script src="{{ asset('js/ResizeSensor.js')}}"></script>
 <script src="{{ asset('js/dashboard.js')}}"></script>
