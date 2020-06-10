@@ -23,11 +23,12 @@
                                 <table class="table mg-b-0">
                                     <thead>
                                     <tr>
-                                        <th>Image</th>
+                                        <th>Photo</th>
                                         <th>First Name</th>
                                         <th>SurName</th>
                                         <th>Telephone</th>
                                         <th>Sex</th>
+                                        <th>Type</th>
                                         <th>Date</th>
                                         <th></th>
                                     </tr>
@@ -36,7 +37,7 @@
                                     @foreach($admissions as $item)
                                         <tr>
                                             <td class="">
-                                                <img src="{{ $item->user->avatar }}" class="wd-40 rounded-circle" alt="">
+                                                <img src="{{ $item->photo }}" class="wd-40 rounded-circle" alt="">
                                             </td>
                                             <td>
                                                {{ $item->first_name }}
@@ -49,6 +50,9 @@
                                             </td>
                                             <td>
                                                {{ $item->sex }}
+                                            </td>
+                                            <td class="text-uppercase">
+                                               {{ $item->type }}
                                             </td>
                                             <td>{{ $item->created_at->format('Y-M-d') }}</td>
                                             <td class="pd-r-0-force tx-center"><a href="{{ route('admin.printslip',$item->id) }}" class="btn btn-outline-info btn-oblong">Print Slip</a></td>
