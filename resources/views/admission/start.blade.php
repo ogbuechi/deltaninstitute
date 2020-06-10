@@ -234,6 +234,10 @@
     </div>
 @endsection
 
+@section('css')
+    <link href="{{ asset('lib/select2.min.css') }}" rel="stylesheet">
+@endsection
+
 @section('js')
     <script src="{{ asset('/lib/select2.min.js') }}"></script>
 

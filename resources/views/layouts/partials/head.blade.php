@@ -38,16 +38,17 @@
     <link href="{{ asset('lib/jquery-switchbutton/jquery.switchButton.css') }}" rel="stylesheet">
     <link href="{{ asset('lib/rickshaw/rickshaw.min.css') }}" rel="stylesheet">
     <link href="{{ asset('lib/chartist/chartist.css') }}" rel="stylesheet">
-    <link href="http://themetrace.com/template/bracket/lib/select2/css/select2.min.css" rel="stylesheet">
+{{--    <link href="http://themetrace.com/template/bracket/lib/select2/css/select2.min.css" rel="stylesheet">--}}
 
-    <!-- Bracket CSS -->
+@yield('css')
+
+<!-- Bracket CSS -->
     <link rel="stylesheet" href="{{ asset('/css/bracket.css') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    @yield('css')
 
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
