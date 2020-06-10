@@ -2129,6 +2129,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['all_courses', 'all_certifications', 'id', 'p_primaries'],
   data: function data() {
@@ -38928,6 +38930,13 @@ var render = function() {
             "div",
             { staticClass: "col-12 mb-4" },
             [
+              _vm.not_working
+                ? _c("img", {
+                    staticStyle: { width: "100%" },
+                    attrs: { src: "/images/waiting.gif" }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
               _c("h3", { staticClass: "mb-3" }, [
                 _vm._v("Passport Photograph :")
               ]),
@@ -38945,7 +38954,18 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _vm._m(16),
+          _c("div", { staticClass: "col-6" }, [
+            !_vm.not_working
+              ? _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-info",
+                    attrs: { href: "/admission/print" }
+                  },
+                  [_vm._v("Print Out Slip")]
+                )
+              : _vm._e()
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-6" }, [
             _c(
@@ -39149,18 +39169,6 @@ var staticRenderFns = [
       _c("button", { staticClass: "btn btn-info", attrs: { type: "submit" } }, [
         _vm._v("Save and add more")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-6" }, [
-      _c(
-        "a",
-        { staticClass: "btn btn-info", attrs: { href: "/admission/print" } },
-        [_vm._v("Print Out Slip")]
-      )
     ])
   }
 ]

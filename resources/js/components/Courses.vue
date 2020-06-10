@@ -202,13 +202,15 @@
         </div>
         <div v-if="image" class="row mg-b-25 mt-4">
             <div class="col-12 mb-4">
+                <img v-if="not_working" src="/images/waiting.gif" style="width: 100%" />
+
                 <h3 class="mb-3">Passport Photograph :</h3>
 
                 <dropzone @vdropzone-sending="sending" @vdropzone-processing="processing" @vdropzone-success="vsuccess" ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></dropzone>
             </div>
 
             <div class="col-6">
-                <a href="/admission/print" class="btn btn-info">Print Out Slip</a>
+                <a v-if="!not_working" href="/admission/print" class="btn btn-info">Print Out Slip</a>
             </div>
 
             <div class="col-6">
