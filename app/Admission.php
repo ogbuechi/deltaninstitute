@@ -8,6 +8,8 @@ class Admission extends Model
 {
     protected $guarded = [];
 
+    protected $appends = ['applicant_id'];
+
     public function post_primaries()
     {
         return $this->hasMany(PostPrimary::class);
@@ -24,6 +26,10 @@ class Admission extends Model
 
     public function getCoursesAttribute($value){
         return json_decode($value) ?: [];
+    }
+
+    public function getApplicantIdAttribute(){
+        return 'DIFAS/'.$this->id.'/'.strtoupper($this->type).'/'.$this->created_at->format('Y');
     }
 
     public function getPhotoAttribute($value) {

@@ -37,6 +37,15 @@ class AdmissionController extends Controller
         $admissions = Admission::all();
         return view('admin.applicants',compact('admissions'));
     }
+
+    public function destroy($admission){
+        if(!auth()->user()->is_admin){
+            return redirect()->route('home');
+        }
+        Admission::findOrFail($admission)->delete();
+        return redirect()->back()->with('success', 'Application Successfully Deleted');
+    }
+
     public function store(Request $request)
     {
         $data = $this->getData($request);
@@ -144,12 +153,6 @@ class AdmissionController extends Controller
         return $data;
     }
 
-
-    public function destroy(Admission $admission)
-    {
-        //
-    }
-
     public function deletePostPrimary(Request $request)
     {
         PostPrimary::findOrFail($request->id)->delete();
@@ -200,6 +203,7 @@ class AdmissionController extends Controller
             'guardian_name' => ['required'],
             'guardian_occupation' => ['required'],
             'guardian_telephone' => ['required'],
+            'teller' => ['required'],
         ];
         $data = $request->validate($rules);
         $data['user_id'] = auth()->id();

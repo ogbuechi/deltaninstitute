@@ -48,6 +48,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
         Route::get('/applicants', 'AdmissionController@applicants')->name('admin.applicants');
         Route::get('/printslip/{id}', 'AdmissionController@printSlip')->name('admin.printslip');
+
+        Route::get('applicant/{applicant}/delete','AdmissionController@destroy')->name('admin.applicant.destroy');
+
     });
 
 });

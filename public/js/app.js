@@ -2131,6 +2131,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['all_courses', 'all_certifications', 'id', 'p_primaries'],
   data: function data() {
@@ -23612,17 +23616,19 @@ var render = function() {
     _vm._v(" "),
     _vm.image
       ? _c("div", { staticClass: "row mg-b-25 mt-4" }, [
+          _c("div", { staticClass: "col-12 mb-4" }, [
+            _vm.not_working
+              ? _c("img", {
+                  staticStyle: { width: "100%" },
+                  attrs: { src: "/images/waiting.gif" }
+                })
+              : _vm._e()
+          ]),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "col-12 mb-4" },
             [
-              _vm.not_working
-                ? _c("img", {
-                    staticStyle: { width: "100%" },
-                    attrs: { src: "/images/waiting.gif" }
-                  })
-                : _vm._e(),
-              _vm._v(" "),
               _c("h3", { staticClass: "mb-3" }, [
                 _vm._v("Passport Photograph :")
               ]),

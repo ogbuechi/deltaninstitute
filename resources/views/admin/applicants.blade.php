@@ -20,7 +20,7 @@
                     <div class="">
                         <div class="bd bd-gray-300 rounded table-responsive">
                             @if (count($admissions) > 0)
-                                <table class="table mg-b-0">
+                                <table id="datatable1" class="table mg-b-0">
                                     <thead>
                                     <tr>
                                         <th>Photo</th>
@@ -30,6 +30,7 @@
                                         <th>Sex</th>
                                         <th>Type</th>
                                         <th>Date</th>
+                                        <th>Delete</th>
                                         <th></th>
                                     </tr>
                                     </thead>
@@ -55,6 +56,7 @@
                                                {{ $item->type }}
                                             </td>
                                             <td>{{ $item->created_at->format('Y-M-d') }}</td>
+                                            <td class="pd-r-0-force tx-center"><a href="{{ route('admin.applicant.destroy',$item) }}" class="btn btn-danger">Delete</a></td>
                                             <td class="pd-r-0-force tx-center"><a href="{{ route('admin.printslip',$item->id) }}" class="btn btn-outline-info btn-oblong">Print Slip</a></td>
                                         </tr>
                                     @endforeach

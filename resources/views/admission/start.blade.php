@@ -101,12 +101,22 @@
                         </div><!-- col-4 -->
 
 
-                        <div class="col-lg-8">
-                            <div class="form-group mg-b-10-force">
+                        <div class="col-lg-12">
+                            <div class="form-group ">
                                 <label  class="form-control-label">Permanent Home Address: <span class="tx-danger">*</span></label>
                                 <input required class="form-control {{ $errors->has('permanent_home_address') ? 'parsley-error' : '' }}" type="text" name="permanent_home_address" value="{{ old('permanent_home_address') }}" placeholder="Enter address">
                                 <ul class="parsley-errors-list filled">
                                     {!! $errors->first('permanent_home_address', '<li>:message.</li>') !!}
+                                </ul>
+                            </div>
+                        </div><!-- col-8 -->
+
+                        <div class="col-lg-8">
+                            <div class="form-group mg-b-10-force">
+                                <label  class="form-control-label">Payment Teller Number: <span class="tx-danger">*</span></label>
+                                <input required class="form-control {{ $errors->has('teller') ? 'parsley-error' : '' }}" type="text" name="teller" value="{{ old('teller') }}" placeholder="Enter teller number">
+                                <ul class="parsley-errors-list filled">
+                                    {!! $errors->first('teller', '<li>:message.</li>') !!}
                                 </ul>
                             </div>
                         </div><!-- col-8 -->

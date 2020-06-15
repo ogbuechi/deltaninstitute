@@ -88,7 +88,11 @@
                                 <tbody>
                                 <tr>
                                     <td class="tx-bold" width="30%">Applicant ID</td>
-                                    <td colspan="3">DT/8/DDD/2000</td>
+                                    <td colspan="3">{{ $admission->applicant_id }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="tx-bold" width="30%">Teller ID</td>
+                                    <td colspan="3">{{ $admission->teller }}</td>
                                 </tr>
                                 <tr>
                                     <td class="tx-bold" width="30%">First Name</td>

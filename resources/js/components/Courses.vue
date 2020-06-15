@@ -201,8 +201,12 @@
             </form>
         </div>
         <div v-if="image" class="row mg-b-25 mt-4">
+
             <div class="col-12 mb-4">
                 <img v-if="not_working" src="/images/waiting.gif" style="width: 100%" />
+            </div>
+
+            <div class="col-12 mb-4">
 
                 <h3 class="mb-3">Passport Photograph :</h3>
 
