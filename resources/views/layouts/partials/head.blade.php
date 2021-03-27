@@ -41,6 +41,7 @@
 {{--    <link href="http://themetrace.com/template/bracket/lib/select2/css/select2.min.css" rel="stylesheet">--}}
 
 @yield('css')
+@yield('style')
 
 <!-- Bracket CSS -->
     <link rel="stylesheet" href="{{ asset('/css/bracket.css') }}">

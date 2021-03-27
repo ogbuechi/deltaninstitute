@@ -6,16 +6,16 @@
 <script src="{{ asset('/lib/jquery-ui/jquery-ui.js') }}"></script>
 <script src="{{ asset('/lib/jquery-switchbutton/jquery.switchButton.js') }}"></script>
 <script src="{{ asset('/lib/peity/jquery.peity.js') }}"></script>
-<script src="{{ asset('/lib/chartist/chartist.js') }}"></script>
+{{--<script src="{{ asset('/lib/chartist/chartist.js') }}"></script>--}}
 <script src="{{ asset('/lib/jquery.sparkline.bower/jquery.sparkline.min.js') }}"></script>
 <script src="{{ asset('/lib/d3/d3.js') }}"></script>
-<script src="{{ asset('/lib/rickshaw/rickshaw.min.js') }}"></script>
+{{--<script src="{{ asset('/lib/rickshaw/rickshaw.min.js') }}"></script>--}}
 
 
 
 <script src="{{ asset('js/bracket.js')}}"></script>
-<script src="{{ asset('js/ResizeSensor.js')}}"></script>
-<script src="{{ asset('js/dashboard.js')}}"></script>
+{{--<script src="{{ asset('js/ResizeSensor.js')}}"></script>--}}
+{{--<script src="{{ asset('js/dashboard.js')}}"></script>--}}
 <script src="{{ mix('/js/app.js') }}" defer></script>
 
 @yield('js')
