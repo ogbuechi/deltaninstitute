@@ -16,8 +16,6 @@
 <!-- ########## START: HEAD PANEL ########## -->
     @include('layouts.partials.header')
     <!-- ########## END: HEAD PANEL ########## -->
-
-
     @yield('content')
 </div>
 
