@@ -8,16 +8,30 @@
                     <span class="menu-item-label">Dashboard</span>
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
-            <a href="{{ route('root') }}" target="_blank" class="br-menu-link">
+            <a href="{{ route('home') }}" target="_blank" class="br-menu-link">
                 <div class="br-menu-item">
                     <i class="menu-item-icon icon ion-home tx-22"></i>
                     <span class="menu-item-label">Home</span>
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
-            <a href="{{ route('admin.applicants') }}" class="br-menu-link">
+            <a href="{{ route('admin.articles') }}" class="br-menu-link">
+                <div class="br-menu-item">
+                    <i class="menu-item-icon icon ion-ios-list-outline tx-24"></i>
+                    <span class="menu-item-label">Articles</span>
+                </div><!-- menu-item -->
+            </a><!-- br-menu-link -->
+
+            <a href="{{ route('admin.users') }}" class="br-menu-link">
                 <div class="br-menu-item">
                     <i class="menu-item-icon icon ion-person tx-24"></i>
-                    <span class="menu-item-label">Applicants</span>
+                    <span class="menu-item-label">Users</span>
+                </div><!-- menu-item -->
+            </a><!-- br-menu-link -->
+
+            <a href="{{ route('admin.users') }}?admin=1" class="br-menu-link">
+                <div class="br-menu-item">
+                    <i class="menu-item-icon icon ion-person-add tx-24"></i>
+                    <span class="menu-item-label">Admins</span>
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
 

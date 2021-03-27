@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Admission;
+use App\Article;
 use App\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -16,7 +17,20 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
+    }
+
+    public function home(){
+        return view('index');
+    }
+    public function editorial(){
+        return view('pages.editorial');
+    }
+    public function contact(){
+        return view('pages.contact');
+    }
+    public function submission(){
+        return view('pages.submission');
     }
 
     public function postImage(Request $request){
@@ -66,8 +80,9 @@ class HomeController extends Controller
         if(!auth()->user()->is_admin){
             return redirect()->route('home');
         }
-        $admissions = Admission::with('user')->latest()->paginate(10);
-        return view('admin.dashboard',compact('admissions'));
+//        $admissions = Admission::with('user')->latest()->paginate(10);
+        $articles = Article::latest()->paginate(10);
+        return view('admin.dashboard',compact('articles'));
     }
     public function index()
     {
